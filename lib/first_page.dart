@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:todo_app/second_page.dart';
+// import 'package:todo_app/second_page.dart';
+import 'second_page.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -59,7 +60,8 @@ class _FirstPageState extends State<FirstPage> {
 
 class TodoCard extends StatefulWidget {
   String title;
-  TodoCard(this.title);
+  String sub_title;
+  TodoCard(this.title, {this.sub_title = ""});
 
   @override
   State<TodoCard> createState() => _TodoCardState();
@@ -88,7 +90,7 @@ class _TodoCardState extends State<TodoCard> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(children: [Text(widget.title), Text("Sutitle")]),
+          Column(children: [Text(widget.title), Text("Subtitle")]),
           IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
         ],
       ),

@@ -6,6 +6,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var titleController = TextEditingController();
+    var subTitleController = TextEditingController();
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text("Form Page")),
@@ -19,11 +20,15 @@ class SecondPage extends StatelessWidget {
               decoration: InputDecoration(border: OutlineInputBorder()),
             ),
             TextField(
+              controller: subTitleController,
               decoration: InputDecoration(border: OutlineInputBorder()),
             ),
             ElevatedButton(
               onPressed: () {
-                onSubmit(titleController.value.text);
+                onSubmit(
+                  titleController.value.text,
+                  subTitleController.value.text,
+                );
                 Navigator.of(context).pop();
               },
               child: Text("Submit"),
